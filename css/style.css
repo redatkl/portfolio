@@ -1,0 +1,149 @@
+/* ─────────────────────────────────────────
+   Reda prtfolio — Main Stylesheet
+   File: css/style.css
+───────────────────────────────────────── */
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Design Tokens ── */
+:root {
+  --bg:         #0d0f12;
+  --nav-bg:     #13161b;
+  --border:     #2a2e38;
+  --text:       #c8cdd8;
+  --text-dim:   #6b7280;
+  --accent:     #00d4c8;
+  --accent-dim: #00a89e;
+  --active:     #ffffff;
+
+  --font-mono:  'Space Mono', monospace;
+  --font-sans:  'Syne', sans-serif;
+
+  --nav-height: 52px;
+  --radius-sm:  6px;
+  --radius-md:  10px;
+
+  --transition: 0.2s ease;
+}
+
+/* ── Base ── */
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─────────────────────────────────────────
+   NAVBAR
+───────────────────────────────────────── */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: var(--nav-height);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+}
+
+.nav-logo .globe-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.nav-logo span {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--active);
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--text-dim);
+  transition: color var(--transition);
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--active);
+}
+
+.nav-links a.active {
+  color: var(--active);
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* Contact Button */
+.nav-contact {
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--accent);
+  padding: 7px 18px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), transform 0.15s ease;
+}
+
+.nav-contact:hover {
+  background: var(--accent-dim);
+  transform: translateY(-1px);
+}
+
+/* ─────────────────────────────────────────
+   MAIN CONTENT
+───────────────────────────────────────── */
+main {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+}
