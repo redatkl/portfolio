@@ -18,7 +18,7 @@
   --text:       #c8cdd8;
   --text-dim:   #6b7280;
   --accent:     #00d4c8;
-  --accent-dim: #00a89e;
+  --accent-dim: #00a89e;    
   --active:     #ffffff;
 
   --font-mono:  'Space Mono', monospace;
@@ -277,6 +277,21 @@ section + section {
 .btn-ghost:hover { color: var(--active); }
 
 /* ─────────────────────────────────────────
+   HERO GRID
+───────────────────────────────────────── */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 70% 80% at 80% 50%, black 0%, transparent 70%);
+  opacity: 0.35;
+}
+
+/* ─────────────────────────────────────────
    PAGE HEADER (inner sections)
 ───────────────────────────────────────── */
 .page-header {
@@ -299,4 +314,14 @@ section + section {
   letter-spacing: -0.03em;
   color: var(--active);
   line-height: 1;
+}
+
+/* ─────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────── */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
