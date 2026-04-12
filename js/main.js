@@ -19,25 +19,20 @@
   }
 
   // Intersection Observer: watch each section
-  const sections = document.querySelectorAll('main [id]');
+  const sections = document.querySelectorAll('main section[id]');
 
-  if (sections.length > 0) {
-    const observer = new IntersectionObserver(
+  const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) setActive(entry.target.id);
         });
       },
-      { threshold: 0.4 }
+      {
+      rootMargin: `-${getComputedStyle(document.documentElement)
+        .getPropertyValue('--nav-height').trim()} 0px -60% 0px`,
+      threshold: 0
+    }
     );
     sections.forEach(section => observer.observe(section));
-  }
 
-  // Fallback: highlight on click
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      const id = link.getAttribute('href').replace('#', '');
-      setActive(id);
-    });
-  });
 })();
