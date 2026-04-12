@@ -35,4 +35,24 @@
     );
     sections.forEach(section => observer.observe(section));
 
+    // Contact popup
+  const overlay = document.getElementById('contact-overlay');
+  const openBtn = document.getElementById('contact-btn');
+  const closeBtn = document.getElementById('contact-close');
+
+  openBtn.addEventListener('click', e => {
+    e.preventDefault();
+    overlay.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
+
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) overlay.classList.remove('open');
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') overlay.classList.remove('open');
+  });
+  
 })();

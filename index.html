@@ -26,7 +26,7 @@
       <li><a href="#case-studies">Case Studies</a></li>
     </ul>
 
-    <a href="#contact" class="nav-contact">Contact</a>
+    <a href="#" id="contact-btn" class="nav-contact">Contact</a>
   </nav>
 
   <!-- ─── MAIN CONTENT ─── -->
@@ -64,13 +64,82 @@
 
     </section>
 
-    <!-- Reda section -->
      <section id="reda">
-        <div class="page-header">
+      <div class="page-header">
         <p class="page-label">01 / Get to know Reda</p>
         <h2 class="page-title">Reda</h2>
       </div>
-     </section>
+ 
+      <div class="reda-body">
+ 
+        <!-- Left: photo -->
+        <div class="reda-photo-col">
+          <div class="reda-photo-wrap">
+            <img src="assets/photo.jpg" alt="Reda TRANKIL" />
+          </div>
+ 
+          <div class="reda-status">
+            <span class="reda-status-dot"></span>
+            Available for projects
+          </div>
+        </div>
+ 
+        <!-- Right: bio + CV -->
+        <div class="reda-bio-col">
+ 
+          <div class="reda-intro">
+            <p class="reda-role">GIS &amp; Remote Sensing Specialist</p>
+            <h3 class="reda-name">Reda TRANKIL</h3>
+ 
+            <div class="reda-bio">
+              <p>
+                I am a geospatial analyst and remote sensing specialist based in Morocco, with a deep
+                focus on translating raw Earth observation data into actionable intelligence. My work
+                sits at the intersection of satellite imagery, spatial modeling, and strategic
+                decision-making — helping organizations understand their territory, track change over
+                time, and act with precision.
+              </p>
+              <p>
+                Over the years I have worked across land use mapping, environmental monitoring,
+                urban expansion analysis, and humanitarian response — always with the same goal:
+                make complex spatial data legible and useful to the people who need it most.
+                I am comfortable working at every stage of the pipeline, from raw sensor data to
+                polished, client-ready maps and reports.
+              </p>
+              <p>
+                When I am not buried in raster stacks or writing Python scripts for satellite image
+                classification, I am thinking about how geospatial tools can be made more accessible,
+                more open, and more impactful for communities across the Global South.
+              </p>
+            </div>
+          </div>
+ 
+          <!-- Stats -->
+          <div class="reda-stats">
+            <div class="reda-stat">
+              <span class="reda-stat-num">3<span>+</span></span>
+              <span class="reda-stat-label">Years of experience</span>
+            </div>
+            <div class="reda-stat">
+              <span class="reda-stat-num">12<span>+</span></span>
+              <span class="reda-stat-label">Tools &amp; platforms</span>
+            </div>
+          </div>
+ 
+          <!-- CV download -->
+          <div class="reda-cv">
+            <a href="assets/cv.pdf" download class="btn-cv">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download CV
+            </a>
+            <span class="reda-cv-note">PDF — updated 2025</span>
+          </div>
+ 
+        </div>
+      </div>
+    </section>
 
       <!-- EXPERTISE -->
     <section id="expertise">
@@ -95,6 +164,27 @@
         <h2 class="page-title">Case studies</h2>
       </div>
       </section>
+
+      <div id="contact-overlay" class="contact-overlay">
+  <div class="contact-modal">
+    <button class="contact-close" id="contact-close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <p class="page-label">Contact</p>
+    <h2 class="contact-title">Let's work<br><span>together.</span></h2>
+    <p class="contact-sub">Open to projects, consulting, and collaborations.<br>Usually respond within 24 hours.</p>
+    <div class="contact-cards">
+      <a href="https://www.linkedin.com/in/reda-trankil-58293716a/" target="_blank" class="contact-card">
+        <div class="contact-card-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <div><p class="contact-card-label">LinkedIn</p><p class="contact-card-value">Reda TRANKIL</p></div>
+      </a>
+      <a href="https://github.com/redatkl" target="_blank" class="contact-card">
+        <div class="contact-card-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
+        <div><p class="contact-card-label">GitHub</p><p class="contact-card-value">@redatrankil</p></div>
+      </a>
+    </div>
+  </div>
+</div>
 
   </main>
 
