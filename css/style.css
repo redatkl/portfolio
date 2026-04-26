@@ -648,4 +648,53 @@ section + section {
 }
 
 .contact-card-value { font-size: 13px; color: var(--active); font-weight: 600; }
+
+/* ─────────────────────────────────────────
+   PROJECTS PAGE
+───────────────────────────────────────── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+ 
+.back-link:hover { color: var(--accent); }
+ 
+.projects-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  gap: 20px;
+  padding: 60px;
+  text-align: center;
+}
+ 
+.projects-empty-icon {
+  color: var(--border);
+  margin-bottom: 8px;
+}
+ 
+.projects-empty-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+ 
+.projects-empty-sub {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.7;
+  opacity: 0.6;
+}
  
