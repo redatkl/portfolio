@@ -1,8 +1,8 @@
 {
-  "slug": "carbon-analysis",
-  "id": "001",
+  "slug": "project-2",
+  "id": "002",
   "title": "A carbon baseline assessment for the Alto Mayo Protected Forest in Peru — Bosque de Protección Alto Mayo (BPAM)",
-  "description": "Multi-temporal analysis of agricultural land conversion using Sentinel-2 imagery between 2018 and 2023.",
+  "description": "Multi-temporal analysis",
   "thumbnail": "assets/projects/carbon_analysis/01_kpi_card.png",
   "year": "2026",
   "tags": ["Remote Sensing", "carbon analysis", "Sentinel-2", "deforestation", "google earth engine"],

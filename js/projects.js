@@ -18,8 +18,8 @@ async function loadProjects() {
 function renderCards(projects) {
   const grid = document.getElementById('projects-grid');
 
-  grid.innerHTML = projects.map(p => `
-    <div class="project-card">
+  grid.innerHTML = projects.map((p, i) => `
+    <a href="project.html?id=${p.slug}" class="project-card">
       <div class="project-thumb">
         <img src="${p.thumbnail}" alt="${p.title}" loading="lazy" />
       </div>
@@ -31,7 +31,7 @@ function renderCards(projects) {
           ${p.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
         </div>
       </div>
-    </div>
+    </a>
   `).join('');
 }
 
