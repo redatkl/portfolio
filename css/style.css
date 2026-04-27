@@ -980,3 +980,224 @@ section + section {
   font-size: 14px;
   color: var(--text);
 }
+
+/* ─────────────────────────────────────────
+   CASE STUDY LAYOUT
+───────────────────────────────────────── */
+
+/* ── Hero ── */
+/* FROM */
+.cs-hero {
+  position: relative;
+  min-height: 52vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+/* TO */
+.cs-hero {
+  border-bottom: 1px solid var(--border);
+}
+
+.cs-hero-content .back-link {
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+.cs-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 48px 60px 56px;
+  width: 100%;
+  max-width: 820px;
+}
+
+.cs-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 20px;
+}
+
+.cs-meta-pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--accent);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.cs-meta-pill--dim {
+  color: var(--text-dim);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+}
+
+.cs-title {
+  font-family: var(--font-sans);
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--active);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.cs-lead {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 600px;
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+
+/* ── Body ── */
+.cs-body {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  align-items: start;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Sections ── */
+.cs-content {
+  border-right: 1px solid var(--border);
+}
+
+.cs-section {
+  padding: 48px 60px;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.cs-section--accent {
+  background: rgba(0, 212, 200, 0.03);
+  border-left: 2px solid var(--accent);
+}
+
+.cs-section-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 2px;
+}
+
+.cs-section-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+.cs-section-label span:last-child {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.cs-section-body p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text);
+}
+
+.cs-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.cs-images img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  display: block;
+  transition: border-color var(--transition);
+}
+
+.cs-images img:hover {
+  border-color: var(--accent);
+}
+
+/* ── Sidebar ── */
+.cs-sidebar {
+  padding: 48px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: sticky;
+  top: var(--nav-height);
+}
+
+.cs-sidebar-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cs-sidebar-block:last-child {
+  border-bottom: none;
+}
+
+.cs-sidebar-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cs-sidebar-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs-sidebar-list li {
+  font-size: 13px;
+  color: var(--text);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.cs-sidebar-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 11px;
+}
+
+.cs-sidebar-value {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.cs-sidebar-cta {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(0,212,200,0.03);
+  text-align: center;
+}
+
+.cs-sidebar-cta p {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
