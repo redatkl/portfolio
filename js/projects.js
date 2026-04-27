@@ -1,24 +1,63 @@
 // js/projects.js
 
+let allProjects = [];
+
 async function loadProjects() {
-  // 1. fetch the list of project folders
-  const index = await fetch('assets/projects/index.json').then(r => r.json());
+  try {
+    const index = await fetch('assets/projects/index.json').then(r => r.json());
 
-  // 2. fetch each project's meta.json in parallel
-  const projects = await Promise.all(
-    index.map(slug =>
-      fetch(`assets/projects/${slug}/meta.json`).then(r => r.json())
-    )
-  );
+    allProjects = (await Promise.allSettled(
+      index.map(slug =>
+        fetch(`assets/projects/${slug}/meta.json`).then(r => r.json())
+      )
+    ))
+    .filter(r => r.status === 'fulfilled')
+    .map(r => r.value);
 
-  // 3. render cards
-  renderCards(projects);
+    buildFilters(allProjects);
+    renderCards(allProjects);
+  } catch (err) {
+    console.error('Failed to load projects:', err);
+  }
+}
+
+function buildFilters(projects) {
+  // collect all unique tags across all projects
+  const tags = ['all', ...new Set(projects.flatMap(p => p.tags))];
+  const bar  = document.querySelector('.filter-bar');
+
+  bar.innerHTML = tags.map(tag => `
+    <button class="filter-btn ${tag === 'all' ? 'active' : ''}" data-filter="${tag}">
+      ${tag === 'all' ? 'All' : tag}
+    </button>
+  `).join('');
+
+  // click handler
+  bar.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+    const filtered = filter === 'all'
+      ? allProjects
+      : allProjects.filter(p => p.tags.includes(filter));
+
+    renderCards(filtered);
+  });
 }
 
 function renderCards(projects) {
   const grid = document.getElementById('projects-grid');
 
-  grid.innerHTML = projects.map((p, i) => `
+  if (projects.length === 0) {
+    grid.innerHTML = `<p class="projects-empty-title">No projects match this filter.</p>`;
+    return;
+  }
+
+  grid.innerHTML = projects.map(p => `
     <a href="project.html?id=${p.slug}" class="project-card">
       <div class="project-thumb">
         <img src="${p.thumbnail}" alt="${p.title}" loading="lazy" />

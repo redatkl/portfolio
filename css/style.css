@@ -797,6 +797,39 @@ section + section {
   border-radius: 4px;
 }
 
+/* ── Filter bar ── */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 60px 32px;
+}
+
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: none;
+  border: 1px solid var(--border);
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--active);
+  border-color: var(--text-dim);
+}
+
+.filter-btn.active {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
 /* ─────────────────────────────────────────
    PROJECT DETAIL PAGE
 ───────────────────────────────────────── */
@@ -985,17 +1018,6 @@ section + section {
    CASE STUDY LAYOUT
 ───────────────────────────────────────── */
 
-/* ── Hero ── */
-/* FROM */
-.cs-hero {
-  position: relative;
-  min-height: 52vh;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-}
-
-/* TO */
 .cs-hero {
   border-bottom: 1px solid var(--border);
 }
@@ -1038,8 +1060,8 @@ section + section {
 
 .cs-title {
   font-family: var(--font-sans);
-  font-size: clamp(28px, 4vw, 52px);
-  font-weight: 800;
+  font-size: clamp(20px, 4vw, 40px);
+  font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--active);
   line-height: 1.1;
