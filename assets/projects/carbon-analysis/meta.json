@@ -8,8 +8,10 @@
   "tags": ["Remote Sensing", "carbon analysis", "Sentinel-2", "deforestation", "google earth engine"],
   "theme": "Carbon Emissions",
   "tools": ["QGIS", "Python", "Google Earth Engine", "Sentinel-2"],
-  "context": "Commissioned by X organization to monitor agricultural shifts.",
-  "content": "Full write-up of the project methodology, findings, and outcomes. Can be as long as needed.",
+  "challenge": "What problem needed solving...",
+  "approach": "What data and methods you used and why...",
+  "results": "What was delivered — maps, reports, findings...",
+  "impact": "What changed because of your work...",
   "images": [
     "assets/projects/carbon-analysis/02_annual_emissions.png",
     "assets/projects/carbon-analysis/03_area_vs_emissions.png"

@@ -800,9 +800,17 @@ section + section {
 /* ── Filter bar ── */
 .filter-bar {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0 60px 32px;
+}
+
+.filter-themes {
+  display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 0 60px 32px;
 }
 
 .filter-btn {
@@ -819,15 +827,77 @@ section + section {
   transition: color var(--transition), border-color var(--transition), background var(--transition);
 }
 
-.filter-btn:hover {
-  color: var(--active);
-  border-color: var(--text-dim);
+.filter-btn:hover { color: var(--active); border-color: var(--text-dim); }
+.filter-btn.active { color: var(--bg); background: var(--accent); border-color: var(--accent); }
+
+/* search + suggestions wrapper */
+.filter-search-wrap {
+  position: relative;
 }
 
-.filter-btn.active {
-  color: var(--bg);
-  background: var(--accent);
-  border-color: var(--accent);
+.filter-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--nav-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 14px;
+  transition: border-color var(--transition);
+}
+
+.filter-search:focus-within { border-color: var(--accent); }
+.filter-search svg { color: var(--text-dim); flex-shrink: 0; }
+
+.filter-input {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text);
+  width: 220px;
+  letter-spacing: 0.04em;
+}
+
+.filter-input::placeholder { color: var(--text-dim); }
+
+/* suggestions dropdown */
+.filter-suggestions {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--nav-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  list-style: none;
+  z-index: 50;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.filter-suggestions.open { display: block; }
+
+.filter-suggestion-item {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.filter-suggestion-item:hover {
+  background: rgba(0, 212, 200, 0.06);
+  color: var(--active);
+}
+
+.filter-suggestion-match {
+  color: var(--accent);
+  font-weight: 700;
 }
 
 /* ─────────────────────────────────────────
