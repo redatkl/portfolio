@@ -1,0 +1,19 @@
+{
+  "slug": "alto-mayo-redd-baseline",
+  "title": "REDD+ Baseline Replication: Alto Mayo Protected Forest, Peru (2019–2023)",
+  "description": "A carbon baseline assessment for the Alto Mayo Protected Forest in Peru — the AOI of one of South America's longest-running REDD+ projects (VCS 944). Combines ESA CCI Biomass v6.0 and Hansen Global Forest Change v1.11 in Google Earth Engine, with IPCC Tier 1 factors, to quantify five years of deforestation-driven CO₂ emissions.",
+  "thumbnail": "assets/projects/alto-mayo-redd-baseline/01_kpi_card.png",
+  "year": "2026",
+  "tags": ["REDD+", "MRV", "Carbon Baseline", "Remote Sensing", "Deforestation", "Google Earth Engine"],
+  "theme": "Forest Carbon & MRV",
+  "tools": ["Google Earth Engine", "Hansen Global Forest Change v1.11", "ESA CCI Biomass v6.0", "Python"],
+  "challenge": "Voluntary carbon market projects like VCS 944 (Alto Mayo Protected Forest) rely on baseline emissions assessments to quantify avoided deforestation and issue credits. These assessments are technically demanding, audited, and tied to real financial outcomes — yet the underlying methodology is rarely visible to outside analysts. The challenge: independently replicate a baseline-period emissions assessment for the Alto Mayo reserve using only public datasets, mirroring the structure of a real MRV deliverable.",
+  "approach": "The analysis was conducted in Google Earth Engine over the 2019–2023 period. Aboveground biomass was sourced from ESA CCI Biomass v6.0, and annual forest loss from Hansen Global Forest Change v1.11. A 30% canopy-cover threshold was used to define forest, with a sensitivity analysis at 25% and 50%. Biomass was converted to carbon using the IPCC default factor (× 0.47) and to CO₂-equivalent using the molecular ratio (× 44/12). Outputs were aggregated annually and per hectare, and translated to voluntary carbon market value for context.",
+  "results": "Approximately 413,500 Mg CO₂ released from 806 ha of forest loss over five years, yielding a per-hectare emission factor of 513 Mg CO₂/ha — meaningfully above the reserve-wide average biomass density. This indicates that deforestation within the AOI is concentrated in higher-biomass zones rather than distributed evenly. Deliverables include annual emissions time series, spatial maps of forest loss, a per-hectare emission factor, and a sensitivity analysis across canopy-cover thresholds.",
+  "impact": "Demonstrates end-to-end competency in the workflow used by entry-level MRV analysts: defining an AOI, integrating multi-source remote sensing data, applying IPCC accounting factors, and producing audit-ready outputs. The replication framing also makes the methodology transparent and reproducible — anyone can re-run the analysis against the same public datasets and verify the numbers, which is the core principle MRV is meant to uphold.",
+  "images": [
+    "assets/projects/alto-mayo-redd-baseline/01_kpi_card.png",
+    "assets/projects/alto-mayo-redd-baseline/02_annual_emissions.png",
+    "assets/projects/alto-mayo-redd-baseline/03_area_vs_emissions.png"
+  ]
+}
