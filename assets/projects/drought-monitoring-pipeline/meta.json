@@ -1,0 +1,17 @@
+{
+  "slug": "drought-monitoring-pipeline",
+  "title": "Automated Drought Monitoring Pipeline",
+  "description": "End-to-end geospatial pipeline that ingests multi-source Earth observation data, computes drought indices, and produces decision-ready maps and statistics at regional, provincial, and communal levels — fully automated via cron.",
+  "thumbnail": "",
+  "year": "2024",
+  "tags": ["Python", "R", "CHIRPS", "MODIS NDVI", "MODIS LST", "Soil Moisture", "PostGIS", "Drought Indices", "SPI", "VHI", "Zonal Statistics", "Cron", "Automation", "Remote Sensing", "Time Series"],
+  "theme": "Environmental Monitoring",
+  "tools": [  "Python (rasterio, xarray, geopandas, numpy)", "R (terra, sf, SPEI)", "GDAL / OGR", "PostgreSQL + PostGIS (raster)", "Google Earth Engine API", "matplotlib / cartopy", "cron / systemd timers", "QGIS" ],
+  "challenge": "Drought monitoring in semi-arid regions requires fusing several Earth observation products — precipitation, vegetation, surface temperature, and soil moisture — each with different formats, projections, temporal resolutions, and update cadences. Doing this manually is slow, error-prone, and impossible to keep up to date for operational decision-making. The challenge was to design a single pipeline that could ingest all of these, harmonize them, derive standard drought indices, and deliver results aggregated to the administrative units actually used by decision-makers (regions, provinces, communes) — without human intervention.",
+  "approach": "I built a modular pipeline orchestrated by cron jobs scheduled around each product's release cadence. Acquisition scripts (Python and R) pull CHIRPS rainfall, MODIS NDVI (MOD13Q1), MODIS LST (MOD11A2), and soil moisture rasters, handling authentication, retries, and incremental fetching. A preprocessing layer reprojects to a common CRS, masks clouds and quality flags, and resamples to a shared grid. Cleaned rasters are stored in PostGIS using the raster type, with metadata indexed for fast spatial and temporal queries. The analysis stage computes drought indices — SPI (precipitation-based), VCI (NDVI-based), TCI (LST-based), VHI (combined vegetation health), and a soil moisture anomaly — then performs zonal statistics against three nested admin layers (regions, provinces, communes). The visualization layer auto-generates index maps, anomaly maps, and per-unit time series, exporting figures and CSV/GeoPackage summaries.",
+  "results": "Fully unattended operation: new satellite acquisitions are detected, downloaded, processed, written to PostGIS, and turned into updated drought maps and statistics within hours of release. Index outputs cover the full hierarchy of administrative units, making the same data usable for national overview and commune-level intervention. The PostGIS backend allows fast historical queries — e.g. extracting a 20-year SPI time series for a single commune in seconds — which previously required manual raster handling.",
+  "impact": "The pipeline turns scattered satellite products into a single, queryable, always-up-to-date drought dataset aligned with how local institutions actually plan and respond. Beyond the operational gain, it is fully reproducible and scalable to other regions and indices, and serves as a template for similar environmental monitoring workflows (vegetation, water resources, agricultural yield).",
+  "images": [
+   
+  ]
+}
